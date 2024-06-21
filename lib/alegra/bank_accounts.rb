@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class BankAccounts < Alegra::Record
     def list(options = { format: :formated })

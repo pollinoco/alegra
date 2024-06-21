@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Alegra
   class Contacts < Alegra::Record
     # @param id [ Integer ]
     # @return [ Hash ]
     def find(id)
-      client.get("contacts/#{ id }")
+      client.get("contacts/#{id}")
     end
 
     # Returs all contacts
@@ -65,7 +67,6 @@ module Alegra
     def update(id, params)
       sanitize_params = params.deep_camel_case_lower_keys
       client.put("contacts/#{id}", sanitize_params)
-
     end
 
     # @param id [ Integer ]

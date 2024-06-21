@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class Invoices < Alegra::Record
     # @param id [ Integer ]
@@ -81,4 +83,3 @@ module Alegra
     end
   end
 end
-

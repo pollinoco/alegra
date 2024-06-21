@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class Company < Alegra::Record
     def find(options = { format: :formated })

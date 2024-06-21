@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class Journals < Alegra::Record
     def find(id)

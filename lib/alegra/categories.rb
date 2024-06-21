@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class Categories < Alegra::Record
     def list(params = {}, options = { format: :formated })

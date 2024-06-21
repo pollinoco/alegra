@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'alegra/utilities/hash'
 require 'alegra/utilities/array'
 require 'alegra/utilities/string'

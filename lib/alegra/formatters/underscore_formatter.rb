@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   module Formatters
     class UnderscoreFormatter
@@ -6,7 +8,8 @@ module Alegra
       def initialize
         @original_content = ''
       end
-      def call(options={})
+
+      def call(options = {})
         original_content = options[:content]
         @formatted_content = original_content.deep_underscore_keys
       end

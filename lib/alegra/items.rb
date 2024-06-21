@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 module Alegra
   class Items < Alegra::Record
     # @param id [ Integer ]
     # @return [ Hash ]
     def find(id)
-      client.get("items/#{ id }")
+      client.get("items/#{id}")
     end
 
     # Return all items
     # @return [ Array ]
-    def list()
+    def list
       client.get('items')
     end
 
@@ -38,13 +40,13 @@ module Alegra
     #       - tax [ Array ]
     def update(id, params)
       _params = params.deep_camel_case_lower_keys
-      client.put("items/#{ id }", _params)
+      client.put("items/#{id}", _params)
     end
 
     # @param id [ Integer ]
     # @return [ Hash ]
     def delete(id)
-      client.delete("items/#{ id }")
+      client.delete("items/#{id}")
     end
   end
 end

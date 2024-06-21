@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class Hash
-  def deep_camel_case_lower_keys(hash=self)
-    {}.tap { |h|
+  def deep_camel_case_lower_keys(hash = self)
+    {}.tap do |h|
       hash.each { |key, value| h[camel_case_lower_key(key)] = map_value(value, :deep_camel_case_lower_keys) }
-    }
+    end
   end
 
-  def deep_underscore_keys(hash=self)
-    {}.tap { |h|
+  def deep_underscore_keys(hash = self)
+    {}.tap do |h|
       hash.each { |key, value| h[underscore_key(key)] = map_value(value, :deep_underscore_keys) }
-    }
+    end
   end
 
   private
@@ -18,7 +20,7 @@ class Hash
   end
 
   def camel_case_lower_key(key)
-    key.to_s.split('_').inject([]){ |buffer, e| buffer.push(buffer.empty? ? e : e.capitalize) }.join.to_sym
+    key.to_s.split('_').inject([]) { |buffer, e| buffer.push(buffer.empty? ? e : e.capitalize) }.join.to_sym
   end
 
   def map_value(thing, method)

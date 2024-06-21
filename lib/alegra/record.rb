@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Alegra
   class Record
     attr_reader :client

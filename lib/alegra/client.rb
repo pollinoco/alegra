@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'alegra/setup'
 require 'alegra/request'
 require 'alegra/record'
@@ -13,7 +15,7 @@ require 'alegra/journals'
 
 module Alegra
   class Client
-    def initialize(username=nil, apikey=nil, debug=false)
+    def initialize(username = nil, apikey = nil, debug = false)
       @setup = Alegra::Setup.new(username, apikey, debug)
     end
 
@@ -27,12 +29,12 @@ module Alegra
       request.post(url, params, options)
     end
 
-    def put(url, params={}, options = { format: :formated })
+    def put(url, params = {}, options = { format: :formated })
       request = Alegra::Request.new(@setup.host, @setup.path, @setup.token)
       request.put(url, params, options)
     end
 
-    def delete(url, params={}, options = { format: :formated })
+    def delete(url, params = {}, options = { format: :formated })
       request = Alegra::Request.new(@setup.host, @setup.path, @setup.token)
       request.delete(url, params, options)
     end
